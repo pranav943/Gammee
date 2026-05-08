@@ -1,0 +1,124 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0d0d1a;
+  --accent: #7c3aed;
+  --accent2: #06b6d4;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  overflow: hidden;
+  user-select: none;
+}
+
+#app {
+  position: relative;
+  width: min(900px, 100vw);
+  aspect-ratio: 16/9;
+}
+
+#gameCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 60px #7c3aed55;
+}
+
+/* ---- overlays ---- */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: rgba(13,13,26,.82);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+}
+
+.overlay.hidden { display: none; }
+
+.overlay h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  letter-spacing: .12em;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.overlay h2 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #f87171;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--muted);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.btn {
+  margin-top: 8px;
+  padding: .7em 2.6em;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s;
+  box-shadow: 0 0 20px #7c3aed88;
+}
+
+.btn:hover  { transform: scale(1.06); box-shadow: 0 0 32px #7c3aedaa; }
+.btn:active { transform: scale(.97); }
+
+.hint { font-size: .8rem; color: var(--muted); }
+kbd {
+  background: #ffffff18;
+  border: 1px solid #ffffff30;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-family: inherit;
+}
+
+#finalScore, #highScore {
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+#finalScore span, #highScore span {
+  color: var(--accent2);
+  font-weight: 700;
+}
+
+/* ---- HUD ---- */
+#hud {
+  position: absolute;
+  top: 14px;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 22px;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--text);
+  pointer-events: none;
+}
+#hud.hidden { display: none; }

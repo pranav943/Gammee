@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gammee – Unlimited Runner</title>
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Start screen -->
+    <div id="startScreen" class="overlay">
+      <h1>GAMMEE</h1>
+      <p class="subtitle">Unlimited Runner</p>
+      <button id="startBtn" class="btn">PLAY</button>
+      <p class="hint">Press <kbd>Space</kbd> / <kbd>↑</kbd> to jump &nbsp;|&nbsp; Double jump allowed</p>
+    </div>
+
+    <!-- Game over screen -->
+    <div id="gameOverScreen" class="overlay hidden">
+      <h2>GAME OVER</h2>
+      <p id="finalScore"></p>
+      <p id="highScore"></p>
+      <button id="restartBtn" class="btn">PLAY AGAIN</button>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <span id="scoreDisplay">Score: 0</span>
+      <span id="distDisplay">0 m</span>
+    </div>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
