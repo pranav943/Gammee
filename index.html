@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gammee – Unlimited Runner</title>
+  <title>Gammee – Survive the Hunt</title>
   <link rel="stylesheet" href="src/style.css" />
 </head>
 <body>
@@ -13,17 +13,25 @@
     <!-- Start screen -->
     <div id="startScreen" class="overlay">
       <h1>GAMMEE</h1>
-      <p class="subtitle">Unlimited Runner</p>
-      <button id="startBtn" class="btn">PLAY</button>
-      <p class="hint">Press <kbd>Space</kbd> / <kbd>↑</kbd> to jump &nbsp;|&nbsp; Double jump allowed</p>
+      <p class="subtitle">Survive the Hunt</p>
+      <div class="enemy-preview">
+        <span class="ep snake">🐍 Snakes</span>
+        <span class="ep fish">🐟 Flying Fish</span>
+        <span class="ep human">🏃 You</span>
+      </div>
+      <button id="startBtn" class="btn">RUN!</button>
+      <p class="hint">
+        <kbd>Space</kbd> / <kbd>↑</kbd> / <kbd>Tap</kbd> to jump &nbsp;|&nbsp; Double jump allowed
+      </p>
     </div>
 
     <!-- Game over screen -->
     <div id="gameOverScreen" class="overlay hidden">
       <h2>GAME OVER</h2>
+      <p id="deathMsg" class="death-msg"></p>
       <p id="finalScore"></p>
       <p id="highScore"></p>
-      <button id="restartBtn" class="btn">PLAY AGAIN</button>
+      <button id="restartBtn" class="btn">TRY AGAIN</button>
     </div>
 
     <!-- HUD -->

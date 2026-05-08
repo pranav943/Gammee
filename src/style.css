@@ -108,6 +108,28 @@ kbd {
   font-weight: 700;
 }
 
+.death-msg {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f87171;
+  letter-spacing: .04em;
+}
+
+.enemy-preview {
+  display: flex;
+  gap: 18px;
+  margin: 4px 0;
+}
+.ep {
+  font-size: .95rem;
+  padding: .3em .9em;
+  border-radius: 50px;
+  font-weight: 600;
+}
+.ep.snake  { background: #14532d55; color: #4ade80; border: 1px solid #16a34a; }
+.ep.fish   { background: #0c4a6e55; color: #38bdf8; border: 1px solid #0ea5e9; }
+.ep.human  { background: #1e1b4b55; color: #a78bfa; border: 1px solid #7c3aed; }
+
 /* ---- HUD ---- */
 #hud {
   position: absolute;
